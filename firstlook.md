@@ -27,7 +27,7 @@ for name in list(data.columns.values):
         print name, "\n", data[name].unique(), "\n"
 ```
 
-Quick look at the numerical features' importances.
+Quick look at the numerical features' importances
 
 ```python
 data_num = data[numerical].fillna(0)
@@ -40,3 +40,11 @@ plt.figure(figsize=(15, 6))
 sns.barplot(x='column', y='importance', data=importances.iloc[:20])
 _ = plt.xticks(rotation=90)
 ```
+
+Quick distribution plot
+
+```python
+plt.figure(figsize=(10, 6))
+sns.distplot(np.log1p(data['feature_name']))
+```
+
